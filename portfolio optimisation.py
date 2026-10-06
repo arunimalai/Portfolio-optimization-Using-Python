@@ -23,8 +23,6 @@ stocks={}
 
 # Loop through each stock in the stock_list
 
-from pathlib import Path
-
 for i_stock in stock_list:
     stocks[i_stock]=pd.read_csv(str(i_stock + '.csv'),parse_dates=True, 
                                 index_col='Date')
