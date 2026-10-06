@@ -25,14 +25,9 @@ stocks={}
 
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "main"
-
 for i_stock in stock_list:
-    stocks[i_stock] = pd.read_csv(
-        DATA_DIR / f"{i_stock}.csv",
-        parse_dates=True,
-        index_col="Date")
+    stocks[i_stock]=pd.read_csv(str(i_stock + '.csv'),parse_dates=True, 
+                                index_col='Date')
 #%%
 
 # create 'normalised return' column for each stock
@@ -273,10 +268,7 @@ plt.ylabel('Return')
 
 # Add the optimal portfolio to the visual
 
-plt.scatter(max_sharpe_volatility,max_sharpe_return,c='orange',edgecolors='black')
-plt.savefig('results/portfolio_optimization.png', dpi=300,bbox_inches='tight')
 
-plt.show()
 
 
 
