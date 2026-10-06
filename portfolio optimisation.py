@@ -242,6 +242,12 @@ sharpe_array.max()
 index_max_sharpe = np.argmax(sharpe_array)
 str(index_max_sharpe)
 
+optimal_weights = weights_array[index_max_sharpe, :]
+
+optimal_portfolio = pd.DataFrame({ 'Stock': stock_list, 'Weight': optimal_weights})
+
+optimal_portfolio.to_csv( 'results/optimal_portfolio_weights.csv', index=False)
+
 # Print the Optimal Weights for each stock
 
 print(stock_list)
@@ -268,6 +274,9 @@ plt.ylabel('Return')
 # Add the optimal portfolio to the visual
 
 plt.scatter(max_sharpe_volatility,max_sharpe_return,c='orange',edgecolors='black')
+plt.savefig('results/portfolio_optimization.png', dpi=300,bbox_inches='tight')
+
+plt.show()
 
 
 
