@@ -23,9 +23,16 @@ stocks={}
 
 # Loop through each stock in the stock_list
 
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR / "data"
+
 for i_stock in stock_list:
-    stocks[i_stock]=pd.read_csv(str(i_stock + '.csv'),parse_dates=True, 
-                                index_col='Date')
+    stocks[i_stock] = pd.read_csv(
+        DATA_DIR / f"{i_stock}.csv",
+        parse_dates=True,
+        index_col="Date")
 #%%
 
 # create 'normalised return' column for each stock
