@@ -26,7 +26,7 @@ stocks={}
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR = BASE_DIR / "main"
 
 for i_stock in stock_list:
     stocks[i_stock] = pd.read_csv(
