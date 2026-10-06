@@ -1,0 +1,1 @@
+This project uses historical equity price data to compare an equal-weighted portfolio with randomly generated portfolio allocations. It calculates portfolio returns, volatility and Sharpe ratios, and identifies the allocation with the highest simulated Sharpe ratio.
